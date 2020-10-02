@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour {
     }
 
     public void PlayNowButton() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameLevel");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
     }
 
     public void AboutButton() {

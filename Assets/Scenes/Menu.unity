@@ -1384,7 +1384,7 @@ GameObject:
   - component: {fileID: 1918927589}
   - component: {fileID: 1918927588}
   m_Layer: 5
-  m_Name: Title
+  m_Name: About
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1441,7 +1441,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Halloween Hunt
+  m_Text: 'COMP 376 Assignment 2
+
+    Giuseppe Campanelli 40043909'
 --- !u!222 &1918927589
 CanvasRenderer:
   m_ObjectHideFlags: 0
