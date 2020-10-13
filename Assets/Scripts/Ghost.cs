@@ -4,24 +4,55 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    private float direction = 1;
+    [SerializeField]
+    float direction = 1;
+    [SerializeField]
+    float speed = 1;
 
-    [SerializeField] private float speed = 1;
+    Animator mAnimator;
     
-    // Start is called before the first frame update
     void Start()
     {
-        direction = 1;
+        mAnimator = GetComponent<Animator>();
+        mAnimator.SetFloat("direction", direction);
+        //FaceDirection();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         transform.Translate(new Vector2(direction * speed * Time.deltaTime, 0));
+        //FaceDirection();
     }
 
     void OnMouseDown()
     {
         Destroy(gameObject);
+
+        // Increase score
+        // Deduct bullet?
+    } 
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+
+        // Laughing dog?
+    }
+
+    public void SetDirection(float direction)
+    {
+        this.direction = direction;
+    }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
+
+    private void FaceDirection()
+    {
+        Quaternion rotation3D = direction == -1 ? Quaternion.LookRotation(Vector3.forward) : Quaternion.LookRotation(Vector3.back); 
+        transform.localRotation = rotation3D;
+        //direction *= -1;
     }
 }
