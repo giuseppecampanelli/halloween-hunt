@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Crosshair : MonoBehaviour
 {
-    void Start() {
+    void Start()
+    {
         Cursor.visible = false;
     }
 
-    void Update () {
+    void Update ()
+    {
         transform.position = Input.mousePosition;
      }
 }
