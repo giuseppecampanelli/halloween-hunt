@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    [SerializeField]
-    float direction = 1;
-    [SerializeField]
-    float speed = 1;
+    public float direction = 1;
+    public static float speed = 1;
 
     Animator mAnimator;
     
@@ -28,8 +26,8 @@ public class Ghost : MonoBehaviour
     {
         Destroy(gameObject);
 
-        // Increase score
-        // Deduct bullet?
+        Game.scoreValue += 3;
+        Game.enemiesRemaining--;
     } 
 
     void OnBecameInvisible()
@@ -44,9 +42,9 @@ public class Ghost : MonoBehaviour
         this.direction = direction;
     }
 
-    public void SetSpeed(float speed)
+    public static void resetSpeed()
     {
-        this.speed = speed;
+        speed = 1;
     }
 
     private void FaceDirection()

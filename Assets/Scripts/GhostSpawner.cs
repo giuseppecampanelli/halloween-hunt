@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class GhostSpawner : MonoBehaviour
 {
-    [SerializeField]
     public float spawnRate = 3;
-    [SerializeField]
+    
     public GameObject enemy;
 
-    float nextSpawn = 0.0f;
+    private static float nextSpawn = 0;
     
     void Start()
     {
@@ -18,7 +17,7 @@ public class GhostSpawner : MonoBehaviour
     
     void Update()
     {
-        if (Time.time > nextSpawn) {
+        if (Time.time > nextSpawn && !Game.gameOver) {
             nextSpawn = Time.time + spawnRate;
 
             float randY = Random.Range(-4.5f, 4.5f);
@@ -33,5 +32,10 @@ public class GhostSpawner : MonoBehaviour
             GameObject ghostObject = Instantiate(enemy, spawnLocation, Quaternion.identity);
             ghostObject.GetComponent<Ghost>().SetDirection(direction);
         }
+    }
+
+    public static void resetTimer()
+    {
+        nextSpawn = 0;
     }
 }
