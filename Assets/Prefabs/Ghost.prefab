@@ -124,7 +124,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: 1
-  speed: 2
 --- !u!95 &2671312608353275799
 Animator:
   serializedVersion: 3

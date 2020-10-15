@@ -20,3 +20,7 @@ Duck Hunt with a Halloween spin.
 * [Ghost Sprite](https://rpgtileset.com/sprite/ghosts-sprite-for-rpg-maker-mv/) - Ghost
 * [Darkness and Horror Soundtrack](https://assetstore.unity.com/packages/audio/ambient/darkness-and-horror-soundtrack-56718) - Main Menu Background Music
 * [Ambient Eerie](https://assetstore.unity.com/packages/audio/ambient/ambient-scary-volume-1-167786) - Game Background Music
+* [Laser 01](https://assetstore.unity.com/packages/audio/sound-fx/shooting-sound-177096) - CrossHair Click Audio
+* [Coin 01](https://assetstore.unity.com/packages/audio/sound-fx/sound-fx-retro-pack-121743) - Time Warning Audio
+* [Power Up 11](https://assetstore.unity.com/packages/audio/sound-fx/sound-fx-retro-pack-121743) - Level Up Audio
+* [Game Over 28](https://assetstore.unity.com/packages/audio/sound-fx/sound-fx-retro-pack-121743) - Game Over Audio

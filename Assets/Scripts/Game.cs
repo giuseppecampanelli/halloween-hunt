@@ -14,6 +14,13 @@ public class Game : MonoBehaviour
     public Text timer;
     public Text score;
     public Text level;
+
+    public AudioSource levelUpAudio;
+    public AudioSource timeWarningAudio;
+    public AudioSource gameOverAudio;
+
+    private float warningRate = 1;
+    private float nextWarning = 0;
     
     void Start()
     {
@@ -31,10 +38,17 @@ public class Game : MonoBehaviour
             score.text = scoreValue.ToString();
             level.text = levelValue.ToString();
 
+            if (Time.time > nextWarning && timeRemaining <= 5) {
+                nextWarning = Time.time + warningRate;
+                timeWarningAudio.Play(0);
+            }
+
             if (enemiesRemaining == 0) {
                 ClearEnemies();
 
                 levelValue++;
+                levelUpAudio.Play(0);
+
                 enemiesRemaining = 5;
                 timeRemaining = 60;
 
@@ -48,7 +62,10 @@ public class Game : MonoBehaviour
                 }
             }
         } else {
-            // game over
+            if (!gameOver) {
+                gameOverAudio.Play(0);
+            }
+
             gameOver = true;
             ClearEnemies();
         }

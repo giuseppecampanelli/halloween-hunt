@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Crosshair : MonoBehaviour
 {
+    public AudioSource fireSound;
+
     void Start()
     {
         Cursor.visible = false;
@@ -13,5 +15,8 @@ public class Crosshair : MonoBehaviour
     void Update()
     {
         transform.position = Input.mousePosition;
+
+        if (Input.GetMouseButtonDown(0))
+            fireSound.Play(0);
     }
 }
