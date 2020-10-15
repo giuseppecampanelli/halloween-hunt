@@ -22,19 +22,9 @@ public class Ghost : MonoBehaviour
         //FaceDirection();
     }
 
-    void OnMouseDown()
-    {
-        Destroy(gameObject);
-
-        Game.scoreValue += 3;
-        Game.enemiesRemaining--;
-    } 
-
     void OnBecameInvisible()
     {
         Destroy(gameObject);
-
-        // Laughing dog?
     }
 
     public void SetDirection(float direction)

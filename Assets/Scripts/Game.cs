@@ -76,9 +76,14 @@ public class Game : MonoBehaviour
 
     private void ClearEnemies()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject enemy in enemies) {
-            Destroy(enemy);
+        GameObject[] ghosts = GameObject.FindGameObjectsWithTag("Ghost");
+        foreach (GameObject ghost in ghosts) {
+            Destroy(ghost);
+        }
+
+        GameObject[] witches = GameObject.FindGameObjectsWithTag("Witch");
+        foreach (GameObject witch in witches) {
+            Destroy(witch);
         }
     }
 }
