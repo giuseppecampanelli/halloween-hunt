@@ -14,6 +14,7 @@ public class Game : MonoBehaviour
     public Text timer;
     public Text score;
     public Text level;
+    public Text gameOverText;
 
     public AudioSource levelUpAudio;
     public AudioSource timeWarningAudio;
@@ -27,6 +28,7 @@ public class Game : MonoBehaviour
         timer.text = timeRemaining.ToString();
         score.text = scoreValue.ToString();
         level.text = levelValue.ToString();
+        gameOverText.enabled = false;
     }
     
     void Update()
@@ -67,6 +69,7 @@ public class Game : MonoBehaviour
             }
 
             gameOver = true;
+            gameOverText.enabled = true;
             ClearEnemies();
         }
     }
