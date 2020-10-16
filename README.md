@@ -24,3 +24,4 @@ Duck Hunt with a Halloween spin.
 * [Coin 01](https://assetstore.unity.com/packages/audio/sound-fx/sound-fx-retro-pack-121743) - Time Warning Audio
 * [Power Up 11](https://assetstore.unity.com/packages/audio/sound-fx/sound-fx-retro-pack-121743) - Level Up Audio
 * [Game Over 28](https://assetstore.unity.com/packages/audio/sound-fx/sound-fx-retro-pack-121743) - Game Over Audio
+* [Pumpkin Sprite](https://www.pngitem.com/middle/TRbiiRm_pumpkin-clipart-spinning-png-clipart-freeuse-download-pumpkin/) - Laughing Pumpkin

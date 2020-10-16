@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class Crosshair : MonoBehaviour
 {
     public AudioSource fireSound;
+    public GameObject pumpkin;
+
+    private float pumpkinTime = 3;
+    private bool pumpkinVisible;
 
     void Start()
     {
@@ -41,8 +45,26 @@ public class Crosshair : MonoBehaviour
                 if (enemiesHit == 2)
                     Game.scoreValue = 5;
             } else {
+                if (!pumpkinVisible) {
+                    pumpkin.SetActive(true);
+                    pumpkinVisible = true;
+                    StartCoroutine(LateCall());
+                }
+                
                 Game.scoreValue -= 1;
             }
         }
     }
+
+    IEnumerator LateCall()
+     {
+        if (pumpkinVisible) {
+            yield return new WaitForSeconds(pumpkinTime);
+ 
+            if (!Game.gameOver) {
+                pumpkinVisible = false;
+                pumpkin.SetActive(false);
+            }
+        }
+     }
 }

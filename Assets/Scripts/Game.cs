@@ -20,6 +20,8 @@ public class Game : MonoBehaviour
     public AudioSource timeWarningAudio;
     public AudioSource gameOverAudio;
 
+    public GameObject pumpkin;
+
     private float warningRate = 1;
     private float nextWarning = 0;
     
@@ -29,6 +31,7 @@ public class Game : MonoBehaviour
         score.text = scoreValue.ToString();
         level.text = levelValue.ToString();
         gameOverText.enabled = false;
+        pumpkin.SetActive(false);
     }
     
     void Update()
@@ -66,6 +69,7 @@ public class Game : MonoBehaviour
         } else {
             if (!gameOver) {
                 gameOverAudio.Play(0);
+                pumpkin.SetActive(true);
             }
 
             gameOver = true;
