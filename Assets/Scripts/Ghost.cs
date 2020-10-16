@@ -7,6 +7,10 @@ public class Ghost : MonoBehaviour
     public float direction = 1;
     public static float speed = 1;
 
+    private float yDirection = 1;
+    private float dirChange = 2;
+    private float nextDirChange;
+
     Animator mAnimator;
     
     void Start()
@@ -18,7 +22,17 @@ public class Ghost : MonoBehaviour
     
     void Update()
     {
-        transform.Translate(new Vector2(direction * speed * Time.deltaTime, 0));
+        if (Time.time > nextDirChange) {
+            yDirection = Random.Range(0.0f, 1.0f) >= 0.5f ? 1 : -1;
+            nextDirChange += dirChange;
+        }
+
+        float yTranslation = Mathf.Sin(Time.time) * 0.005f * yDirection;
+
+        if (transform.position.y + yTranslation > 5 || transform.position.y + yTranslation < -5)
+            yDirection *= -1;
+
+        transform.Translate(new Vector2(direction * speed * Time.deltaTime, yTranslation));
         //FaceDirection();
     }
 
