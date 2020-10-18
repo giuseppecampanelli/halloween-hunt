@@ -828,8 +828,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -275, y: 240}
-  m_SizeDelta: {x: 100, y: 50}
+  m_AnchoredPosition: {x: -250, y: 240}
+  m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &918515341
 MonoBehaviour:
@@ -925,6 +925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireSound: {fileID: 1288284794}
   pumpkin: {fileID: 620280442}
+  continuousFireTime: 3
 --- !u!114 &1288284792
 MonoBehaviour:
   m_ObjectHideFlags: 0
