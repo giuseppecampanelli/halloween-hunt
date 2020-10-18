@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GhostSpawner : MonoBehaviour
 {
-    public float spawnRate = 3;
+    public static float spawnRate = 3;
     
     public GameObject enemy;
 

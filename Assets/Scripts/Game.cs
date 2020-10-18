@@ -32,6 +32,16 @@ public class Game : MonoBehaviour
         level.text = levelValue.ToString();
         gameOverText.enabled = false;
         pumpkin.SetActive(false);
+
+        int mode = PlayerPrefs.GetInt("GameMode");
+
+        // GameMode Special: Update points & enable continuous shooting
+        if (mode == 1) {
+            Ghost.points = 1;
+            Crosshair.miss = 2;
+            GhostSpawner.spawnRate = 1;
+            Crosshair.continuousShooting = true;
+        }
     }
     
     void Update()

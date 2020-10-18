@@ -6,6 +6,7 @@ public class Ghost : MonoBehaviour
 {
     public float direction = 1;
     public static float speed = 1;
+    public static int points = 3;
 
     private float yDirection = 1;
     private float dirChange = 2;

@@ -8,6 +8,10 @@ public class Crosshair : MonoBehaviour
     public AudioSource fireSound;
     public GameObject pumpkin;
 
+    public static int miss = 1;
+    public static int doubleKill = 5;
+    public static bool continuousShooting;
+
     private float pumpkinTime = 3;
     private bool pumpkinVisible;
 
@@ -24,17 +28,17 @@ public class Crosshair : MonoBehaviour
     {
         transform.position = Input.mousePosition;
 
-        if (!firing) {
+        if (continuousShooting && !firing) {
             CancelInvoke("FireShot");
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !firing) {
+        if (continuousShooting && !firing && Input.GetKeyDown(KeyCode.LeftShift)) {
             firing = true;
 
             StartCoroutine(DisableContinuousFire());
         }
 
-        if (Input.GetMouseButtonDown(0) && firing) {
+        if (continuousShooting && firing && !IsInvoking("FireShot") && Input.GetMouseButtonDown(0)) {
             InvokeRepeating("FireShot", 0, fireRate);
         } else if (Input.GetMouseButtonDown(0)) {
             FireShot();
@@ -55,7 +59,7 @@ public class Crosshair : MonoBehaviour
                 if (hits[i].collider.tag == "Ghost") {
                     enemiesHit++;
                     Destroy(hits[i].collider.gameObject);
-                    Game.scoreValue += 3;
+                    Game.scoreValue += Ghost.points;
                     Game.enemiesRemaining--;
                 } else if (hits[i].collider.tag == "Witch") {
                     enemiesHit++;
@@ -65,7 +69,7 @@ public class Crosshair : MonoBehaviour
             }
 
             if (enemiesHit == 2)
-                Game.scoreValue += 5;
+                Game.scoreValue += Crosshair.doubleKill;
         } else {
             if (!pumpkinVisible) {
                 pumpkin.SetActive(true);
@@ -73,7 +77,7 @@ public class Crosshair : MonoBehaviour
                 StartCoroutine(PumpkinDisappear());
             }
             
-            Game.scoreValue -= 1;
+            Game.scoreValue -= Crosshair.miss;
         }
     }
 
