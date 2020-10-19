@@ -28,20 +28,31 @@ public class Crosshair : MonoBehaviour
     {
         transform.position = Input.mousePosition;
 
-        if (continuousShooting && !firing) {
-            CancelInvoke("FireShot");
+        if (continuousShooting) {
+            CheckContinuousShooting();
         }
 
-        if (continuousShooting && !firing && Input.GetKeyDown(KeyCode.LeftShift)) {
-            firing = true;
-
-            StartCoroutine(DisableContinuousFire());
-        }
-
-        if (continuousShooting && firing && !IsInvoking("FireShot") && Input.GetMouseButtonDown(0)) {
-            InvokeRepeating("FireShot", 0, fireRate);
-        } else if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0)) {
             FireShot();
+        }
+    }
+
+    void CheckContinuousShooting()
+    {
+        if (!firing) {
+            CancelInvoke("FireShot");
+
+            if (Input.GetKeyDown(KeyCode.LeftShift)) {
+                firing = true;
+
+                StartCoroutine(DisableContinuousFire());
+            }
+        }
+        
+        if (firing && !IsInvoking("FireShot") && Input.GetMouseButton(0)) {
+            InvokeRepeating("FireShot", 0, fireRate);
+        } else if (!Input.GetMouseButton(0)) {
+            CancelInvoke("FireShot");
         }
     }
 
@@ -64,7 +75,7 @@ public class Crosshair : MonoBehaviour
                 } else if (hits[i].collider.tag == "Witch") {
                     enemiesHit++;
                     Destroy(hits[i].collider.gameObject);
-                    Game.scoreValue += 10;
+                    Game.scoreValue += 10; // Change to Witch.points
                 }
             }
 
