@@ -14,4 +14,8 @@ public class Menu : MonoBehaviour {
         PlayerPrefs.SetInt("GameMode", 1);
         UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
     }
+
+    public void Quit() {
+        Application.Quit();
+    }
 }

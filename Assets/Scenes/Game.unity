@@ -925,7 +925,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireSound: {fileID: 1288284794}
   pumpkin: {fileID: 620280442}
-  continuousFireTime: 3
+  fireTime: 3
+  fireRate: 0.25
 --- !u!114 &1288284792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1071,6 +1072,7 @@ GameObject:
   - component: {fileID: 1634553916}
   - component: {fileID: 1634553915}
   - component: {fileID: 1634553918}
+  - component: {fileID: 1634553923}
   - component: {fileID: 1634553919}
   - component: {fileID: 1634553920}
   - component: {fileID: 1634553921}
@@ -1159,7 +1161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2675984bfb6b735418e0501e8133956b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 3
   enemy: {fileID: 8825872516986569976, guid: a56d18d48b176bb48a8c5945aa905b0a, type: 3}
 --- !u!114 &1634553919
 MonoBehaviour:
@@ -1469,6 +1470,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1634553923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634553914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568ece5e8eb6c824ca6832a7ba067052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 6446684017475362694, guid: 1ebc7cad815e46d4b983cb1510c6c849, type: 3}
 --- !u!1 &1759058018
 GameObject:
   m_ObjectHideFlags: 0

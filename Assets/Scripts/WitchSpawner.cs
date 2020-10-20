@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GhostSpawner : MonoBehaviour
+public class WitchSpawner : MonoBehaviour
 {
     public static float spawnRate = 3;
     
@@ -22,10 +22,10 @@ public class GhostSpawner : MonoBehaviour
                 direction = -1;
             }
 
-            Vector2 spawnLocation = new Vector2(direction * -11, randY);
+            Vector2 spawnLocation = new Vector2(direction * -10, randY);
 
-            GameObject ghostObject = Instantiate(enemy, spawnLocation, Quaternion.identity);
-            ghostObject.GetComponent<Ghost>().SetDirection(direction);
+            GameObject witchObject = Instantiate(enemy, spawnLocation, Quaternion.identity);
+            witchObject.GetComponent<Witch>().SetDirection(direction);
         }
     }
 

@@ -25,3 +25,4 @@ Duck Hunt with a Halloween spin.
 * [Power Up 11](https://assetstore.unity.com/packages/audio/sound-fx/sound-fx-retro-pack-121743) - Level Up Audio
 * [Game Over 28](https://assetstore.unity.com/packages/audio/sound-fx/sound-fx-retro-pack-121743) - Game Over Audio
 * [Pumpkin Sprite](https://www.pngitem.com/middle/TRbiiRm_pumpkin-clipart-spinning-png-clipart-freeuse-download-pumpkin/) - Laughing Pumpkin
+* [Witch Sprite](https://www.animatedimages.org/img-animated-witch-image-0106-55484.htm) - Witch

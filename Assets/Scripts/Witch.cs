@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ghost : MonoBehaviour
+public class Witch : MonoBehaviour
 {
     public float direction = 1;
     public static float speed = 1;
-    public static int points = 3;
+    public static int points = 10;
 
     private float yDirection = 1;
     private float dirChange = 2;
@@ -25,6 +25,7 @@ public class Ghost : MonoBehaviour
             yDirection *= -1;
 
         transform.Translate(new Vector2(direction * speed * Time.deltaTime, yTranslation));
+        //FaceDirection();
     }
 
     void OnBecameInvisible()
@@ -37,7 +38,9 @@ public class Ghost : MonoBehaviour
         this.direction = direction;
 
         if (direction == -1) {
-            FlipSprite();
+            Vector3 newScale = transform.localScale;
+            newScale.x *= -1;
+            transform.localScale = newScale;
         }
     }
 

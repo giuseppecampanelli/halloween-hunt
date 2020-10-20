@@ -75,7 +75,7 @@ public class Crosshair : MonoBehaviour
                 } else if (hits[i].collider.tag == "Witch") {
                     enemiesHit++;
                     Destroy(hits[i].collider.gameObject);
-                    Game.scoreValue += 10; // Change to Witch.points
+                    Game.scoreValue += Witch.points;
                 }
             }
 
