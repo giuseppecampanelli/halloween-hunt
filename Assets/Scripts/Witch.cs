@@ -7,6 +7,7 @@ public class Witch : MonoBehaviour
     public float direction = 1;
     public static float speed = 1;
     public static int points = 10;
+    public int health = 3;
 
     private float yDirection = 1;
     private float dirChange = 2;
@@ -25,7 +26,6 @@ public class Witch : MonoBehaviour
             yDirection *= -1;
 
         transform.Translate(new Vector2(direction * speed * Time.deltaTime, yTranslation));
-        //FaceDirection();
     }
 
     void OnBecameInvisible()

@@ -73,9 +73,14 @@ public class Crosshair : MonoBehaviour
                     Game.scoreValue += Ghost.points;
                     Game.enemiesRemaining--;
                 } else if (hits[i].collider.tag == "Witch") {
+                    Witch w = hits[i].collider.gameObject.GetComponent<Witch>();
+                    w.health--;
                     enemiesHit++;
-                    Destroy(hits[i].collider.gameObject);
-                    Game.scoreValue += Witch.points;
+                    
+                    if (w.health == 0) {
+                        Destroy(hits[i].collider.gameObject);
+                        Game.scoreValue += Witch.points;
+                    }
                 }
             }
 
