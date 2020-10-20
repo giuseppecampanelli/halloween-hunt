@@ -70,6 +70,7 @@ public class Game : MonoBehaviour
                 Ghost.speed *= 1.05f;
 
                 GhostSpawner.resetTimer();
+                WitchSpawner.resetTimer();
 
                 if (levelValue == 100) {
                     levelValue = 1;

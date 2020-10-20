@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class WitchSpawner : MonoBehaviour
 {
-    public static float spawnRate = 3;
-    
     public GameObject enemy;
 
-    private static float nextSpawn = 0;
+    private static float spawnRate;
+    private static float nextSpawn;
+
+    void Start()
+    {
+        spawnRate = Random.Range(10.0f, 25.0f);
+        nextSpawn = Random.Range(10.0f, 25.0f);
+    }
     
     void Update()
     {
@@ -26,11 +31,14 @@ public class WitchSpawner : MonoBehaviour
 
             GameObject witchObject = Instantiate(enemy, spawnLocation, Quaternion.identity);
             witchObject.GetComponent<Witch>().SetDirection(direction);
+
+            spawnRate = Random.Range(10.0f, 25.0f);
         }
     }
 
     public static void resetTimer()
     {
         nextSpawn = 0;
+        spawnRate = Random.Range(10.0f, 25.0f);
     }
 }
