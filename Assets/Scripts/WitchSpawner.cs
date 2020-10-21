@@ -38,7 +38,7 @@ public class WitchSpawner : MonoBehaviour
 
     public static void resetTimer()
     {
-        nextSpawn = Random.Range(10.0f, 25.0f);
         spawnRate = Random.Range(10.0f, 25.0f);
+        nextSpawn = Time.time + spawnRate;
     }
 }
