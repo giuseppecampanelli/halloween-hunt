@@ -5,7 +5,7 @@ using UnityEngine;
 public class Witch : MonoBehaviour
 {
     public float direction = 1;
-    public static float speed = 1;
+    public static float speed = 2;
     public static int points = 10;
     public int health = 3;
 
