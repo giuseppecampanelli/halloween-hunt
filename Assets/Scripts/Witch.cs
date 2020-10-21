@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Witch : MonoBehaviour
 {
+    public GameObject healthBar;
+
     public float direction = 1;
     public static float speed = 2;
     public static int points = 10;
@@ -15,6 +17,10 @@ public class Witch : MonoBehaviour
     
     void Update()
     {
+        Vector3 newScale = healthBar.transform.localScale;
+        newScale.x = health * 0.5f;
+        healthBar.transform.localScale = newScale;
+
         if (Time.time > nextDirChange) {
             yDirection = Random.Range(0.0f, 1.0f) >= 0.5f ? 1 : -1;
             nextDirChange += dirChange;
