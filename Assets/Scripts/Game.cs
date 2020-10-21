@@ -15,6 +15,7 @@ public class Game : MonoBehaviour
     public Text score;
     public Text level;
     public Text gameOverText;
+    public Text enemiesLeft;
 
     public AudioSource levelUpAudio;
     public AudioSource timeWarningAudio;
@@ -30,6 +31,7 @@ public class Game : MonoBehaviour
         timer.text = timeRemaining.ToString();
         score.text = scoreValue.ToString();
         level.text = levelValue.ToString();
+        enemiesLeft.text = enemiesRemaining.ToString();
         gameOverText.enabled = false;
         pumpkin.SetActive(false);
 
@@ -52,6 +54,7 @@ public class Game : MonoBehaviour
             timer.text = Mathf.Round(timeRemaining).ToString();
             score.text = scoreValue.ToString();
             level.text = levelValue.ToString();
+            enemiesLeft.text = enemiesRemaining.ToString();
 
             if (Time.time > nextWarning && timeRemaining <= 5) {
                 nextWarning = Time.time + warningRate;
